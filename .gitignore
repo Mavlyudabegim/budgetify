@@ -1,2 +1,40 @@
 # Environment & secrets
 .env
+
+# Binaries for programs and plugins
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Dependency directories (vendor/)
+vendor/
+
+# Go build artifacts
+bin/
+build/
+
+# IDE/editor configs
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Logs
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Database dump/schema files (optional, depending on use case)
+*.sql
+*.dump
+
+# Generated files from goose/db migrations
+goose_dbversion
