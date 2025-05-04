@@ -2,6 +2,7 @@ package auth_handlers
 
 import (
 	"encoding/json"
+	"log"
 	"net/http"
 	"server/internal/auth"
 	"server/internal/auth/helper"
@@ -41,5 +42,10 @@ func RegisterHandler(authSvc *auth.AuthService) http.HandlerFunc {
 			"id":    user.ID,
 			"email": user.Email,
 		})
+		if err != nil {
+			log.Printf("JSON encode error: %+v", err)
+			http.Error(writer, "Internal server error", http.StatusInternalServerError)
+			return
+		}
 	}
 }
