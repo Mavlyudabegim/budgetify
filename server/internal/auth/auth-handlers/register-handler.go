@@ -38,7 +38,7 @@ func RegisterHandler(authSvc *auth.AuthService) http.HandlerFunc {
 		}
 
 		writer.WriteHeader(http.StatusCreated)
-		json.NewEncoder(writer).Encode(map[string]interface{}{
+		err = json.NewEncoder(writer).Encode(map[string]interface{}{
 			"id":    user.ID,
 			"email": user.Email,
 		})
