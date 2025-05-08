@@ -28,6 +28,7 @@ func main() {
 
 	r := mux.NewRouter()
 	r.HandleFunc("/register", authhandlers.RegisterHandler(&authSvc)).Methods("POST")
+	r.HandleFunc("/login", authhandlers.LoginHandler(&authSvc)).Methods("POST")
 	log.Println("Listening on :8080")
 	log.Fatal(http.ListenAndServe(":8080", r))
 }
